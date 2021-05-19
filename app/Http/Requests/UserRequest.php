@@ -24,21 +24,23 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
+//            'level_id' => 'required',
             'fname' => 'required',
             'lname' => 'required',
-            'email' => 'required|min:5|max:50',
-            'password' => 'required|min:4|max:500',
+            'email' => 'required|min:5|max:50|unique:users',
+            'password' => 'required|min:4|max:50|unique:users',
         ];
     }
 
     public function messages()
     {
         return[
-            'fname.required' => 'Enter your name this empty!',
-            'lname.required' => 'Enter your email this empty!',
-            'email.required' => 'Enter your subject this empty!',
-            'password.required' => 'Enter your message this empty!'
+//            'level_id.required' => 'Enter your level_id this empty!',
+            'fname.required' => 'Enter your first name this empty!',
+            'lname.required' => 'Enter your last name this empty!',
+            'email.required' => 'Enter your email this empty!',
+            'password.required' => 'Enter your password this empty!'
         ];
-        
+
     }
 }
