@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\fileController;
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -33,9 +34,7 @@ Route::get('/file', function () {
 
 Route::post('/file/uplad', [fileController::class, "file_upload"])->name('main-file');
 
-////////////////////////
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//////////////////
 
 // if(Gate::allows('subs-only',Auth::user())){
 
